@@ -21,31 +21,35 @@ public class Shopping_list extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ListItem> listitems;
-    private TextView text;
+     TextView text;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_shopping_list, container, false);
-        recyclerView =view.findViewById(R.id.recyclerView);
+        View view = inflater.inflate(R.layout.fragment_shopping_list, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         listitems = new ArrayList<>();
-        for(int i=0;i<10;i++){
-            ListItem listItem=new ListItem(
-                    "Item"+i+1,
+        for (int i = 0; i < 10; i++) {
+            ListItem listItem = new ListItem(
+                    "Item" + i + 1,
                     "1000"
             );
             listitems.add(listItem);
         }
-        adapter=new MyAdapter(listitems,getContext());
-        String name =  getArguments().getString("NAME");
-        text=view.findViewById(R.id.textView2);
-        text.setText(name);
+        adapter = new MyAdapter(listitems, getContext());
+        text = view.findViewById(R.id.textView2);
 
         recyclerView.setAdapter(adapter);
         return view;
+    }
+    public void set_data(){
+        Bundle bundle=getArguments();
+        String name = bundle.getString("NAME");
+        text.setText(name);
     }
 
     public void onCreate(Bundle savedInstanceState) {

@@ -13,9 +13,8 @@ import android.widget.EditText;
 
 
 public class Name_page extends Fragment {
+     EditText edit;
 
-    Button b;
-    EditText edit;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +24,16 @@ public class Name_page extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       final View view= inflater.inflate(R.layout.fragment_name_page, container, false);
-        final Shopping_list obj = new Shopping_list();
-        b  = view.findViewById(R.id.btn);
+        final View view = inflater.inflate(R.layout.fragment_name_page, container, false);
+        Button b = view.findViewById(R.id.btn);
         edit = view.findViewById(R.id.edit_text);
         b.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                String result=edit.getText().toString();
+                final Shopping_list obj = new Shopping_list();
+                String result = edit.getText().toString();
                 Bundle bundle = new Bundle();
-                bundle.putString("NAME",result);
+                bundle.putString("NAME", result);
                 obj.setArguments(bundle);
             }
         });

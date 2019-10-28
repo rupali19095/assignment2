@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<ListItem> listItems;
     private Context context;
 
@@ -22,12 +22,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_item, parent, false);
         return new ViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ListItem listItem=listItems.get(position);
+        ListItem listItem = listItems.get(position);
         holder.newitem_name.setText(listItem.getItem_name());
         holder.newprice.setText(listItem.getPrice());
     }
@@ -37,13 +38,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
         return listItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView newitem_name;
-        public TextView  newprice;
+        public TextView newprice;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            newitem_name=(TextView)itemView.findViewById(R.id.name);
-            newprice=(TextView)itemView.findViewById(R.id.price);
+            newitem_name = (TextView) itemView.findViewById(R.id.name);
+            newprice = (TextView) itemView.findViewById(R.id.price);
         }
 
     }

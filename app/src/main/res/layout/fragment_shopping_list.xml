@@ -3,19 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.rupali.androdev.assignment2_mt19095.Shopping_list">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        />
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
-        android:id="@+id/recyclerView">
-    </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView2"></android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 </FrameLayout>
